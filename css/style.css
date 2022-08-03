@@ -5108,7 +5108,7 @@ input::-webkit-inner-spin-button {
 }
 
 .cellColorCurrent {
-	background: yellow !important;
+	background: rgba(241, 224, 90, 0.99) !important;
 	color: black !important;
 }
 

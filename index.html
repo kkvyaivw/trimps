@@ -27,7 +27,7 @@
 		You should have received a copy of the GNU General Public License
 		along with this program (if you are reading this on the original
 		author's website, you can find a copy at
-		<trimps.github.io/license.txt>). If not, see
+		<>). If not, see
 		<http://www.gnu.org/licenses/>. -->
 <body onblur="gameUnfocused()">
 	<script src="zh/chs.js?20220507"></script>
@@ -1001,25 +1001,25 @@
 		<div id="settingsRow">
 			<table id="settingsTable">
 				<tr>
-					<td class="btn btn-info" onclick="save(false, true)">
+					<td class="btn btn-info" onclick="save(false, true)" style="background-color: #EEE">
 						保存<span id="saveIndicator"></span><span id="playFabIndicator"></span>
 					</td>
-					<td class="btn btn-info" onclick="tooltip('Export', null, 'update')">
+					<td class="btn btn-info" onclick="tooltip('Export', null, 'update')" style="background-color: #EEE">
 						<div>Export</div>
 					</td>
-					<td class="btn btn-info" onclick="tooltip('Import', null, 'update')">
+					<td class="btn btn-info" onclick="tooltip('Import', null, 'update')" style="background-color: #EEE">
 						<div>Import</div>
 					</td>
-					<td class="btn btn-success" onclick="toggleStats()">
+					<td class="btn btn-success" onclick="toggleStats()" style="background-color: #EEE;color: black;">
 						<div>统计</div>
 					</td>
-					<td class="btn tealColor" onclick="toggleAchievementWindow()">
+					<td class="btn tealColor" onclick="toggleAchievementWindow()" style="background-color: #EEE;color: black;"">
 						<div>Achieves</div>
 					</td>
-					<td class="btn btn-default" onclick="toggleSettingsMenu()">
+					<td class="btn btn-default" onclick="toggleSettingsMenu()" style="background-color: #EEE;color: black;">
 						<div id='settingsText'>Settings</div>
 					</td>
-					<td class="btn" id="pastUpgradesBtn" onclick="viewPortalUpgrades()">
+					<td class="btn" id="pastUpgradesBtn" onclick="viewPortalUpgrades()" style="background-color: #EEE;color: black;">
 						
 					</td>
 					<td class="btn btn-new" onclick="window.open('updates.html', '_blank')">
@@ -1391,6 +1391,8 @@
 var nums1=0;
 var ins1=document.getElementById("autoCuipi1");
 
+	document.getElementById("wrapper").style.background = "rgb(81, 186, 207)";
+	document.getElementById("offlineWrapper").style.background = "rgb(81, 186, 207)";
 function importAuto1(){
     if(nums1==0){
     document.body.appendChild(document.createElement('script')).src='auto.js';

@@ -42,14 +42,16 @@ function restartAutoSave(){
 
 function autoSave() {
     if (game.options.menu.autoSave.enabled && !usingRealTimeOffline) save();
-    autoSaveTimeout = setTimeout(autoSave, 60000);
+    autoSaveTimeout = setTimeout(autoSave, 10000);
 }
 
 var lastOnlineSave = -1800000;
 var isSaving = false;
 var disableSaving = false;
 var cloudConflictDisableSaving = false;
+var saveCount = 0;
 function save(exportThis, fromManual) {
+	saveCount++;
 	isSaving = true;
 	autoBattle.save();
     var saveString = JSON.stringify(game);
@@ -246,9 +248,13 @@ function save(exportThis, fromManual) {
 	if (game.options.menu.usePlayFab.enabled == 1 && playFabId){
 		var timeSinceSave = performance.now() - lastOnlineSave;
 		if ((timeSinceSave < 7200000 && !fromManual) || timeSinceSave < 60000){
+			//return;
+		}
+		if(saveCount<=6) {
 			return;
 		}
 		saveToPlayFab(saveString);
+		saveCount=0;
 	}
 
 }
@@ -1103,7 +1109,7 @@ function load(saveString, autoLoad, fromPf) {
 	if (game.global.challengeActive && typeof game.challenges[game.global.challengeActive].onLoad !== 'undefined') game.challenges[game.global.challengeActive].onLoad();
 	if (game.global.challengeActive != "Scientist") document.getElementById("scienceCollectBtn").style.display = "block";
 	if (game.global.brokenPlanet) {
-		document.getElementById("wrapper").style.background = "url(css/bg2_vert.png) center repeat-y";
+		document.getElementById("wrapper").style.background = "blue";
 		document.getElementById("wrapper").className = "wrapperBroken";
 		if (game.global.roboTrimpLevel > 0) displayRoboTrimp();
 	}
@@ -3878,7 +3884,7 @@ function isScryerBonusActive(){
 	return true;
 }
 
-function addHelium(amt){
+function addHelium(amt){ 
 	if (game.global.challengeActive) distributeToChallenges(amt);
 	if (game.global.universe == 2){
 		game.resources.radon.owned += amt;
@@ -15188,7 +15194,7 @@ function planetBreaker(){
 	if (game.global.roboTrimpLevel > 0) document.getElementById("chainHolder").style.visibility = "visible";
 	game.stats.planetsBroken.valueTotal++;
 	game.global.brokenPlanet = true;
-	document.getElementById("wrapper").style.background = "url(css/bg2_vert.png) center repeat-y";
+	document.getElementById("wrapper").style.background = "blue";
 	document.getElementById("wrapper").className = "wrapperBroken";
 	tooltip("The Improbability", null, 'update');
 	if (!game.global.autoUpgradesAvailable){

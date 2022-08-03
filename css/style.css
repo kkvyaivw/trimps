@@ -3878,8 +3878,8 @@ background-color: rgba(255,255,255,0.25);
 	background-color: grey;
 }
 .tealColor, .colorTeal{
-	background-color: #318696 !important;
-	color: white;
+	background-color: white !important;
+	color: black;
 }
 
 .tealColor:hover, .colorTeal.hoverColor:hover{
@@ -4682,8 +4682,8 @@ background-color: rgba(255,255,255,0.25);
 }
 
 .btn-new{
-	background: linear-gradient(90deg, rgba(29,41,58,1) 41%, rgba(30,33,39,1) 100%);
-	color: white;
+	background: white;
+	color: black;
 	font-weight: bold;
 	width: 100%;
 }
@@ -5103,7 +5103,7 @@ input::-webkit-inner-spin-button {
 
 
 .cellColorBeaten{
-	background: green !important;
+	background: rgba(255, 255, 255, 0.6) !important;
 	color: black !important;
 }
 

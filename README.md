@@ -1,7 +1,5 @@
-# 脆皮（Trimps）
+# 脆皮（Trimps）  
+英文原版: [trimps](https://trimps.github.io/)  
+汉化者: [锅巴汉化的团队](https://gitee.com/likexia/cuipi)
 
-英文原版：http://trimps.github.io/
-
-汉化版：https://g8hh.github.io/cuipi/
-
-感谢各位小伙伴：@*.*，@TG303，@枯寂之心，@KuiY，@by22dgb，@sgo37 帮忙汉化。
+我只是搬运工, 我更改了css代码, 使得在机房摸鱼时更不容易被发现。
